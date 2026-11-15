@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101a2b">
+<title>Science Study | 과학 수업자료</title>
+<style>
+:root{--ink:#132137;--muted:#68768a;--line:#e2e8ef;--blue:#315ee8;--paper:#f6f8fb;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+button,a{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
+header{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,24px);position:relative;z-index:5}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.035em;font-size:20px}.brandmark{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:var(--ink);color:#fff;font-size:17px}
+.header-note{font-size:12px;letter-spacing:.13em;color:#7c8898;font-weight:750}
+main{width:min(1150px,calc(100% - 48px));margin:0 auto;padding:64px 0 88px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;color:var(--blue);text-transform:uppercase;margin:0 0 16px}
+h1{font-size:clamp(34px,5vw,60px);letter-spacing:-.065em;line-height:1.2;margin:0}h2{margin:0;font-size:clamp(27px,3vw,38px);letter-spacing:-.055em}.lead{color:var(--muted);font-size:17px;line-height:1.8;margin:21px 0 0}
+.hero{padding:36px 0 66px;border-bottom:1px solid var(--line)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:46px 0 20px}
+.count{font-size:13px;color:var(--muted)}.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.tile{border:1px solid var(--line);background:#fff;border-radius:22px;padding:29px;text-align:left;min-height:222px;display:flex;flex-direction:column;align-items:flex-start;transition:transform .18s,border-color .18s,box-shadow .18s}
+.tile:not(:disabled):hover{transform:translateY(-4px);border-color:#b9c9ff;box-shadow:0 15px 35px #20345d12}
+.tile:disabled{opacity:.54;cursor:default}.tile-icon{font-size:23px;width:49px;height:49px;display:grid;place-items:center;border-radius:15px;background:#edf2ff;margin-bottom:26px}
+.tile-name{font-size:21px;font-weight:800;letter-spacing:-.045em}.tile-foot{display:flex;justify-content:space-between;width:100%;align-items:center;margin-top:12px;font-size:13px;color:var(--muted)}
+.breadcrumb{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:13px;margin:-16px 0 35px}.breadcrumb button{border:0;background:transparent;color:var(--muted);padding:5px 0}.breadcrumb button:hover{color:var(--blue)}
+.lesson-list{display:grid;gap:14px;margin-top:36px}.lesson{display:flex;align-items:center;gap:22px;width:100%;text-align:left;padding:25px 28px;background:#fff;border:1px solid var(--line);border-radius:19px;transition:.2s}.lesson:hover{border-color:#adc1ff;box-shadow:0 12px 28px #20345d0e}.lesson-index{width:54px;height:54px;display:grid;place-items:center;background:#eaf0ff;color:var(--blue);border-radius:15px;font-weight:850;font-size:19px}.lesson-info{flex:1}.lesson-title{font-size:20px;font-weight:800;letter-spacing:-.04em}.lesson-sub{font-size:13px;color:var(--muted);margin-top:8px}.arrow{font-size:24px;color:var(--blue)}
+.viewer{max-width:1200px;margin:0 auto}.viewer-bar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:18px}.viewer-title{font-size:14px;font-weight:750;letter-spacing:-.02em}.viewer-meta{font-size:13px;color:var(--muted)}
+.slide{position:relative;background:#fff;border:1px solid #dfe6ef;border-radius:22px;box-shadow:0 20px 60px #1c304513;aspect-ratio:16/9;min-height:440px;overflow:hidden;display:flex;flex-direction:column;padding:clamp(28px,5vw,66px)}
+.slide::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:linear-gradient(90deg,#315ee8,#73b8ff)}
+.slide-top{display:flex;justify-content:space-between;gap:15px;font-size:12px;letter-spacing:.16em;font-weight:800;color:#6a7b93;text-transform:uppercase}
+.slide-content{margin:auto 0;max-width:900px}.slide-kicker{font-size:14px;font-weight:800;color:var(--blue);margin-bottom:17px}.slide h2{font-size:clamp(33px,5.3vw,67px);letter-spacing:-.065em;line-height:1.19;margin:0;word-break:keep-all}.slide p{font-size:clamp(16px,1.8vw,22px);line-height:1.75;color:#58697f;margin:22px 0 0;word-break:keep-all}.slide-bottom{display:flex;justify-content:space-between;font-size:12px;color:#8491a3;letter-spacing:.06em}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px}.nav-btn{border:1px solid #dce4ee;background:#fff;color:var(--ink);padding:13px 22px;border-radius:12px;font-weight:750;min-width:116px}.nav-btn.primary{background:var(--ink);color:white;border-color:var(--ink)}.nav-btn:disabled{opacity:.35;cursor:default}.progress-wrap{flex:1;max-width:360px;text-align:center}.progress-label{font-size:12px;color:var(--muted);margin-bottom:9px}.progress{height:5px;background:#e1e7ef;border-radius:5px;overflow:hidden}.progress-fill{height:100%;background:var(--blue);transition:width .2s}
+.hint{text-align:center;color:#8893a2;font-size:12px;margin-top:24px}
+footer{border-top:1px solid var(--line);padding:24px 5vw;font-size:12px;color:#8993a2;text-align:center}
+@media(max-width:720px){header{height:65px}.header-note{display:none}main{width:calc(100% - 32px);padding:38px 0 64px}.hero{padding:25px 0 48px}.tiles{grid-template-columns:1fr}.tile{min-height:175px;padding:23px}.tile-icon{margin-bottom:17px}.slide{aspect-ratio:auto;min-height:490px;padding:28px 23px}.slide-top,.slide-bottom{font-size:10px}.slide h2{font-size:36px}.slide p{font-size:17px}.controls{gap:8px}.nav-btn{min-width:88px;padding:12px 9px;font-size:13px}.progress-wrap{min-width:75px}.lesson{padding:20px;gap:13px}.lesson-title{font-size:17px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="#/" aria-label="메인으로"><span class="brandmark">S</span><span>Science Study</span></a><span class="header-note">STUDY MATERIALS · 2026</span></header>
+<main id="app"></main>
+<footer>SCIENCE STUDY · 수업자료 아카이브</footer>
+<script>
+const slides=[
+{kind:"cover",kicker:"INTEGRATED SCIENCE · CHAPTER 13",title:"태양에너지의 생성과 전환",body:"태양에서 만들어진 에너지는 어떤 과정을 거쳐 지구의 여러 현상으로 이어질까?"},
+{kind:"objective",kicker:"TODAY'S GOAL",title:"이번 시간의 학습 목표",body:"① 태양 내부의 핵융합 반응을 설명할 수 있다.\n② 태양에너지가 지구에서 다양한 형태로 전환되는 사례를 설명할 수 있다."},
+{kind:"concept",kicker:"01 · 핵심 개념",title:"태양에너지는 어디에서 만들어질까?",body:"태양 중심부에서 일어나는 수소 핵융합 반응을 살펴봅니다.\n\n[개념 설명 및 그림 추가 예정]"},
+{kind:"concept",kicker:"02 · 핵심 개념",title:"태양에너지는 어떻게 전환될까?",body:"태양 복사 에너지가 지구에 도달해 일으키는 변화를 살펴봅니다.\n\n[에너지 전환 도식 추가 예정]"},
+{kind:"question",kicker:"CHECK POINT",title:"확인 문제",body:"오늘 학습한 내용에서 가장 중요한 에너지 전환 과정을 떠올려 봅시다.\n\n[문항 및 해설 추가 예정]"}
+];
+const app=document.getElementById("app");let currentSlide=0;
+function go(path){location.hash=path;}
+function breadcrumb(last){return '<nav class="breadcrumb" aria-label="경로"><button onclick="go(\'/\')">홈</button><span>›</span><button onclick="go(\'/integrated-science\')">통합과학</button>'+(last?'<span>›</span><span>13. 태양에너지의 생성과 전환</span>':'')+'</nav>';}
+function home(){app.innerHTML='<section class="hero"><p class="eyebrow">SCIENCE STUDY / CLASSROOM</p><h1>과학을 이해하는<br>새로운 학습 공간.</h1><p class="lead">개념을 정리하고, 흐름을 이해하고, 문제로 확인하는 수업자료.</p></section><div class="section-head"><h2>과목 선택</h2><span class="count">1개 과목 운영 중</span></div><div class="tiles"><button class="tile" onclick="go(\'/integrated-science\')"><span class="tile-icon">☀️</span><span class="tile-name">통합과학</span><span class="tile-foot"><span>학습자료 바로가기</span><span>↗</span></span></button></div>';}
+function subject(){app.innerHTML=breadcrumb(false)+'<section><p class="eyebrow">SUBJECT 01</p><h1>통합과학</h1><p class="lead">단원별 수업 슬라이드를 선택하세요.</p></section><div class="section-head"><h2>수업자료</h2><span class="count">1개 차시</span></div><div class="lesson-list"><button class="lesson" onclick="openLesson()"><span class="lesson-index">13</span><span class="lesson-info"><span class="lesson-title">태양에너지의 생성과 전환</span><span class="lesson-sub">개념 학습 · 슬라이드 수업 · 확인 문제</span></span><span class="arrow">→</span></button></div>';}
+function openLesson(){currentSlide=0;go('/integrated-science/13');if(location.hash==='#/integrated-science/13')renderSlide();}
+function escapeHTML(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#39;");}
+function renderSlide(){const s=slides[currentSlide];if(!s)return;const total=slides.length;app.innerHTML=breadcrumb(true)+'<section class="viewer" aria-label="수업 슬라이드"><div class="viewer-bar"><span class="viewer-title">13. 태양에너지의 생성과 전환</span><span class="viewer-meta">통합과학 · '+total+' slides</span></div><article class="slide" aria-live="polite"><div class="slide-top"><span>SCIENCE STUDY</span><span>INTEGRATED SCIENCE</span></div><div class="slide-content"><div class="slide-kicker">'+escapeHTML(s.kicker)+'</div><h2>'+escapeHTML(s.title)+'</h2><p style="white-space:pre-line">'+escapeHTML(s.body)+'</p></div><div class="slide-bottom"><span>13 · SOLAR ENERGY</span><span>'+String(currentSlide+1).padStart(2,'0')+' / '+String(total).padStart(2,'0')+'</span></div></article><div class="controls"><button class="nav-btn" onclick="changeSlide(-1)" '+(currentSlide===0?'disabled':'')+'>← 이전</button><div class="progress-wrap"><div class="progress-label">'+(currentSlide+1)+' / '+total+'</div><div class="progress"><div class="progress-fill" style="width:'+((currentSlide+1)/total*100)+'%"></div></div></div><button class="nav-btn primary" onclick="changeSlide(1)" '+(currentSlide===total-1?'disabled':'')+'>다음 →</button></div><p class="hint">키보드 ← → 또는 화면의 버튼으로 슬라이드를 넘길 수 있습니다.</p></section>';}
+function changeSlide(delta){currentSlide=Math.max(0,Math.min(slides.length-1,currentSlide+delta));renderSlide();}
+function render(){const path=decodeURIComponent(location.hash.slice(1)||'/');if(path==='/integrated-science/13'){renderSlide();return;}if(path==='/integrated-science'){subject();return;}home();}
+window.addEventListener('hashchange',render);
+window.addEventListener('keydown',e=>{if(location.hash!=='#/integrated-science/13'||['INPUT','TEXTAREA'].includes(document.activeElement.tagName))return;if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();changeSlide(1);}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();changeSlide(-1);}});
+render();
+</script>
+</body>
+</html>
